@@ -1,0 +1,35 @@
+@import "./reset.scss";
+$color-white: #e5e7eb;
+$color-black: #212936;
+$color-gray: #121826a6;
+$color-dark-gray: #4d5562;
+$color-pink: #c93b76;
+$bg-color: #121826;
+$text-styles: (
+  name-text: (
+    font-size: 1rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+  author-text: (
+    font-size: 0.75rem,
+    font-weight: 300,
+    color: $color-white,
+  ),
+  small-text: (
+    font-size: 0.625rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+);
+@mixin text-format($type) {
+  font-size: map-get(map-get($text-styles, $type), font-size);
+  font-weight: map-get(map-get($text-styles, $type), font-weight);
+  color: map-get(map-get($text-styles, $type), color);
+}
+.wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: $bg-color;
+  font-family: "Inter", sans-serif;
+}
