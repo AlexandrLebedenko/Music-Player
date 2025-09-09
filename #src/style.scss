@@ -1,25 +1,25 @@
 @import "./reset.scss";
 $color-white: #e5e7eb;
 $color-black: #212936;
-$color-gray: #121826a6;
-$color-dark-gray: #4d5562;
+$color-gray: #4d5562;
+$color-dark-gray: #121826a6;
 $color-pink: #c93b76;
 $bg-color: #121826;
 $text-styles: (
   name-text: (
     font-size: 1rem,
-    font-weight: 400,
+    font-weight: 600,
     color: $color-white,
   ),
   author-text: (
     font-size: 0.75rem,
-    font-weight: 300,
-    color: $color-white,
+    font-weight: 400,
+    color: $color-gray,
   ),
   small-text: (
     font-size: 0.625rem,
     font-weight: 400,
-    color: $color-white,
+    color: $color-gray,
   ),
 );
 @mixin text-format($type) {
@@ -31,5 +31,119 @@ $text-styles: (
   min-height: 100vh;
   min-width: 100%;
   background-color: $bg-color;
+  background-image: url(../img/gradient-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.music-player-box {
+  max-width: fit-content;
+  padding: 1.25rem 1.25rem 1.75rem 1.25rem;
+  background-color: $color-black;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img-box {
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  &__item {
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.name-box {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.song-name {
+  @include text-format(name-text);
+}
+.song-author {
+  @include text-format(author-text);
+}
+.audio {
+}
+.progress-bar {
+  margin-bottom: 2.25rem;
+  width: 100%;
+  &__time-row {
+    @include text-format(small-text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__time-line {
+    width: 100%;
+    max-height: 0.25rem;
+    border-radius: 0.1875rem;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 0;
+      height: 0;
+      background: transparent;
+      border: none;
+    }
+    &::-moz-range-thumb {
+      width: 0;
+      height: 0;
+      background: transparent;
+      border: none;
+    }
+    &::-webkit-slider-runnable-track {
+      height: 0.25rem;
+      background: transparent;
+      border-radius: 3px;
+    }
+    &::-moz-range-track {
+      height: 6px;
+      background: transparent;
+      border-radius: 3px;
+    }
+  }
+}
+
+.controll-buttons-box {
+  display: flex;
+  gap: 1.25rem;
+}
+.control-btn {
+  cursor: pointer;
+}
+.control-btn--prev {
+  max-width: 100%;
+  max-height: 100%;
+}
+.control-btn--play {
+  min-height: 3.125rem;
+  min-width: 3.125rem;
+  border-radius: 50%;
+  background-color: $color-pink;
+  filter: drop-shadow(0px 8px 16px rgba(201, 59, 118, 0.25));
+  transition: filter 150ms ease-in-out;
+  &:active {
+    filter: drop-shadow(0px 0px 0px rgba(201, 59, 118, 0.25));
+  }
+}
+.control-btn--next {
+  max-width: 100%;
+  max-height: 100%;
 }

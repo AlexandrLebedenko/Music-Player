@@ -12,6 +12,35 @@
     <title>Music Player</title>
   </head>
   <body>
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      <div class="music-player-box">
+        <div class="img-box">
+          <img class="img-box__item" src="./img/cover-1.jpg" alt="Song cover" />
+        </div>
+        <div class="name-box">
+          <span class="song-name">Lost in the City Lights</span>
+          <span class="song-author">Cosmo Sheldrake</span>
+        </div>
+        <audio class="audio" src="./music/lost-in-city-lights-145038.mp3"></audio>
+        <div class="progress-bar">
+          <div class="progress-bar__time-row time-row">
+            <span class="time-row--current-time" data-role="currentTime"></span>
+            <span class="time-row--duration-time" data-role="durationTime"></span>
+          </div>
+          <input type="range" class="progress-bar__time-line" value="0" min="0" step="0.1" />
+        </div>
+        <div class="controll-buttons-box" role="group" aria-label="Playback controls">
+          <button class="control-btn control-btn--prev" type="button" aria-label="Previous track">
+            <img src="./img/Stop_and_play_fill-reverse.svg" alt="" aria-hidden="true" />
+          </button>
+          <button class="control-btn control-btn--play" type="button" aria-label="Play and stop track">
+            <img src="./img/Play_fill.svg" alt="" aria-hidden="true" />
+          </button>
+          <button class="control-btn control-btn--next" type="button" aria-label="Next track">
+            <img src="./img/Stop_and_play_fill.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
