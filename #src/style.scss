@@ -75,8 +75,6 @@ $text-styles: (
 .song-author {
   @include text-format(author-text);
 }
-.audio {
-}
 .progress-bar {
   margin-bottom: 2.25rem;
   width: 100%;
@@ -120,7 +118,6 @@ $text-styles: (
     }
   }
 }
-
 .controll-buttons-box {
   display: flex;
   gap: 1.25rem;
