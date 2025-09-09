@@ -8,7 +8,7 @@
 
 ## <a id="general-info">⭐ General info</a>
 
-A minimalist music player with a custom progress bar, smooth animations, and track switching. Built with pure **HTML**, **SCSS**, and **JavaScript**.">
+A minimalist music player with a custom progress bar, smooth animations, and track switching. Built with pure **HTML**, **SCSS**, and **JavaScript**.
 
 ## <a id="Preview">🖼️ Preview</a>
 
